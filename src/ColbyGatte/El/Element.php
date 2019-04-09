@@ -34,9 +34,9 @@ class Element
             : new static($content);
     }
 
-    public function tag($tag)
+    public function tag($tag, $config = [])
     {
-        array_unshift($this->content, $this->tag = new OpenTag($tag));
+        array_unshift($this->content, $this->tag = new OpenTag($tag, $config));
         array_push($this->content, $this->tag->closing());
 
         return $this;
